@@ -29,18 +29,16 @@ namespace ZGames.ZTools.Editor
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 
-                "CommonGame/ClassesAndStructs", 
-                "CommonGame/Enums", 
-                "CommonGame/Interfaces", 
                 "Managers", 
                 "Services", 
                 "Systems", 
                 "UI", 
                 "Utils",
-                "~External");
-            AssetDatabase.Refresh();
+            );
+            Folders.Create(rootPath: "", "External");      
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
+
             Folders.Move(name: "_Scenes", newParent: "_Project");
             Folders.Move(name: "Settings", newParent: "_Project");
             Folders.Delete(folderName: "TutorialInfo");

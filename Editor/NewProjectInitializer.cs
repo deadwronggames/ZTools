@@ -25,7 +25,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "_Art/Textures", 
                 "_DefaultStuffTodoRemove", 
                 "_Special/Editor", 
-                "_Special/Resources", 
+                "_Special/Resources/EventChannels", // EventChannel SO assets go here 
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 
@@ -36,6 +36,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "Utils"
             );
             Folders.Create(rootPath: "", "External");      
+            Folders.Create(rootPath: "", "QuickTest"); // for QuickTestMonoBehaviour and such       
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
 
@@ -60,12 +61,11 @@ namespace DeadWrongGames.ZTools.Editor
         [MenuItem("ZTools/New project initialization/Install essential packages")]
         public static void InstallPackages()
         {
-            // Packages.InstallPackages(new[]
-            // {
-            //     // built in or custom e.g.:
-            //     // "com.unity.2d.animation",
-            //     // "git+https://github.com/deadwronggames/ZTools.git",
-            // });
+            Packages.InstallPackages(new[]
+            {
+                // built in or custom e.g.:
+                "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
+            });
         }
 
         static class Assets

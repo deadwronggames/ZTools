@@ -8,7 +8,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 
-namespace ZGames.ZTools.Editor
+namespace DeadWrongGames.ZTools.Editor
 {
     public static class NewProjectInitializer
     {

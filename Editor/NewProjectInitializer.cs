@@ -37,7 +37,8 @@ namespace DeadWrongGames.ZTools.Editor
                 "Services/Time", 
                 "Services/GlobalVariable", 
                 "Systems", 
-                "UI", 
+                "UI/Configs", 
+                "UI/Prefabs", 
                 "Utils"
             );
             Folders.Create(rootPath: "", "External");      
@@ -72,6 +73,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
                 "git+https://github.com/deadwronggames/ZServices.git",
                 "git+https://github.com/deadwronggames/ZCommon.git",
+                "git+https://github.com/deadwronggames/ZModularUI.git",
             });
         }
 

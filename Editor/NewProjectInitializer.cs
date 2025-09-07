@@ -12,25 +12,6 @@ namespace ZGames.ZTools.Editor
 {
     public static class NewProjectInitializer
     {
-        [MenuItem("ZTools/New project initialization/Import Essential Assets")]
-        public static void ImportEssentials()
-        {
-            Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
-            Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
-            // Add more as needed
-        }
-
-        [MenuItem("ZTools/New project initialization/Install Essential Packages")]
-        public static void InstallPackages()
-        {
-            // Packages.InstallPackages(new[]
-            // {
-            //     // built in or custom e.g.:
-            //     // "com.unity.2d.animation",
-            //     // "git+https://github.com/adammyhre/Unity-Improved-Timers.git",
-            // });
-        }
-
         [MenuItem("ZTools/New project initialization/Create default folder structure")]
         public static void CreateFolders()
         {
@@ -68,6 +49,25 @@ namespace ZGames.ZTools.Editor
             AssetDatabase.MoveAsset("Assets/InputSystem_Actions.inputactions", "Assets/_Project/_DefaultStuffTodoRemove/InputSystem_Actions.inputactions");
             AssetDatabase.DeleteAsset("Assets/Readme.asset");
             AssetDatabase.Refresh();
+        }
+        
+        [MenuItem("ZTools/New project initialization/Import essential assets")]
+        public static void ImportEssentials()
+        {
+            Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
+            Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
+            // Add more as needed
+        }
+        
+        [MenuItem("ZTools/New project initialization/Install essential packages")]
+        public static void InstallPackages()
+        {
+            // Packages.InstallPackages(new[]
+            // {
+            //     // built in or custom e.g.:
+            //     // "com.unity.2d.animation",
+            //     // "git+https://github.com/deadwronggames/ZTools.git",
+            // });
         }
 
         static class Assets

@@ -1,6 +1,6 @@
 {
-    "name": "DeadWrongGames.ZTools",
-    "rootNamespace": "ZGames.ZTools",
+    "name": "DeadWrongGames.ZTools.Editor",
+    "rootNamespace": "DeadWrongGames.ZTools.Editor",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

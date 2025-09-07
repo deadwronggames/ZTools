@@ -1,5 +1,9 @@
 {
     "name": "com.deadwronggames.ztools",
     "version": "1.0.0",
-    "displayName": "ZTools" 
+    "displayName": "ZTools",
+    "author": {
+        "name": "DeadWrong Games",
+        "url": "hhtps://x.com/DeadWrong_Games"
+    }
 }

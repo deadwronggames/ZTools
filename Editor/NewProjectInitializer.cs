@@ -30,7 +30,12 @@ namespace DeadWrongGames.ZTools.Editor
                 "Common/Enums", 
                 "Common/Interfaces", 
                 "Managers", 
-                "Services", 
+                "Services/Audio", 
+                "Services/EventChannel", 
+                "Services/Input", 
+                "Services/DataPersistence", 
+                "Services/Time", 
+                "Services/GlobalVariable", 
                 "Systems", 
                 "UI", 
                 "Utils"

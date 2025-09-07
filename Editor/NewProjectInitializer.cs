@@ -33,7 +33,7 @@ namespace ZGames.ZTools.Editor
                 "Services", 
                 "Systems", 
                 "UI", 
-                "Utils",
+                "Utils"
             );
             Folders.Create(rootPath: "", "External");      
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");

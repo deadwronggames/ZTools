@@ -2,7 +2,7 @@
     "name": "com.deadwronggames.ztools",
     "version": "1.0.0",
     "displayName": "ZTools",
-    "description": "Access functionality via Unity editor top bar -> ZTools",
+    "description": "Editor tools with functionality like automatically setting up good folder structure and packages for new projects.",
     "unity": "2022.3",
     "author": {
         "name": "DeadWrong Games",

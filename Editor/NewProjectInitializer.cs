@@ -25,7 +25,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "_Art/Textures", 
                 "_DefaultStuffTodoRemove", 
                 "_Special/Editor", 
-                "_Special/Resources/EventChannels", // EventChannel SO assets go here 
+                "_Special/Resources/EventChannels", 
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 
@@ -42,7 +42,8 @@ namespace DeadWrongGames.ZTools.Editor
                 "Utils"
             );
             Folders.Create(rootPath: "", "External");      
-            Folders.Create(rootPath: "", "QuickTest"); // for QuickTestMonoBehaviour and such       
+            Folders.Create(rootPath: "", "QuickTest");    
+            Folders.Create(rootPath: "", "SandboxDevelopment");    
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
 

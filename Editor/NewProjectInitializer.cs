@@ -71,6 +71,7 @@ namespace DeadWrongGames.ZTools.Editor
                 // built in or custom e.g.:
                 "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
                 "git+https://github.com/deadwronggames/ZServices.git",
+                "git+https://github.com/deadwronggames/ZCommon.git",
             });
         }
 

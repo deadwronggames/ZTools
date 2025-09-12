@@ -44,6 +44,7 @@ namespace DeadWrongGames.ZTools.Editor
             );
             Folders.Create(rootPath: "", "External");      
             Folders.Create(rootPath: "", "QuickTest");    
+            Folders.Create(rootPath: "", "Resources");    
             Folders.Create(rootPath: "", "SandboxDevelopment");    
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
@@ -72,10 +73,10 @@ namespace DeadWrongGames.ZTools.Editor
             Packages.InstallPackages(new[]
             {
                 // built in or custom e.g.:
-                "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
-                "git+https://github.com/deadwronggames/ZServices.git",
                 "git+https://github.com/deadwronggames/ZCommon.git",
                 "git+https://github.com/deadwronggames/ZModularUI.git",
+                "git+https://github.com/deadwronggames/ZServices.git",
+                "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
             });
         }
 

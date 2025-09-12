@@ -25,7 +25,6 @@ namespace DeadWrongGames.ZTools.Editor
                 "_Art/Sprites", 
                 "_Art/Textures", 
                 "_DefaultStuffTodoRemove", 
-                "_Special/Editor", 
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 
@@ -71,7 +70,13 @@ namespace DeadWrongGames.ZTools.Editor
         {
             Packages.InstallPackages(new[]
             {
-                // built in or custom e.g.:
+                // unity packages
+                "com.unity.cinemachine",
+                
+                // external packages
+                // - PrimeTween: via asset store but not sure, I don't want demo scene etc. so maybe just do it manually?
+                
+                // ZPackages
                 "git+https://github.com/deadwronggames/ZCommon.git",
                 "git+https://github.com/deadwronggames/ZModularUI.git",
                 "git+https://github.com/deadwronggames/ZServices.git",

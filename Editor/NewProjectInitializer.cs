@@ -26,7 +26,6 @@ namespace DeadWrongGames.ZTools.Editor
                 "_Art/Textures", 
                 "_DefaultStuffTodoRemove", 
                 "_Special/Editor", 
-                "_Special/Resources/EventChannels", 
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 

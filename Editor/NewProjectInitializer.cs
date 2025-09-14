@@ -62,6 +62,7 @@ namespace DeadWrongGames.ZTools.Editor
         {
             Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
             Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
+            Assets.ImportAsset("DOTween HOTween v2.unitypackage", "Demigiant\\Editor ExtensionsAnimation");
             // Add more as needed
         }
         
@@ -72,9 +73,6 @@ namespace DeadWrongGames.ZTools.Editor
             {
                 // unity packages
                 "com.unity.cinemachine",
-                
-                // external packages
-                // - PrimeTween: via asset store but not sure, I don't want demo scene etc. so maybe just do it manually?
                 
                 // ZPackages
                 "git+https://github.com/deadwronggames/ZCommon.git",

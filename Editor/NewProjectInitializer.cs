@@ -40,6 +40,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "UI/Prefabs", 
                 "Utils"
             );
+            Folders.Create(rootPath: "", "Editor");      
             Folders.Create(rootPath: "", "External");      
             Folders.Create(rootPath: "", "QuickTest");    
             Folders.Create(rootPath: "", "Resources");    

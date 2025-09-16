@@ -73,6 +73,7 @@ namespace DeadWrongGames.ZTools.Editor
             Packages.InstallPackages(new[]
             {
                 // unity packages
+                "com.unity.addressables",
                 "com.unity.cinemachine",
                 
                 // ZPackages

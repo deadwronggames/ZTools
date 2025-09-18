@@ -16,7 +16,8 @@ namespace DeadWrongGames.ZTools.Editor
         [MenuItem("ZTools/New project initialization/Create default folder structure")]
         public static void CreateFolders()
         {
-            Folders.Create(rootPath: "_Project", 
+            // Specific constant names nice to more easily have addressable assets at expected places 
+            Folders.Create(rootPath: Constants.PROJECT_FOLDER_NAME, 
                 "_Art/Audio", 
                 "_Art/Fonts", 
                 "_Art/Materials", 
@@ -29,14 +30,14 @@ namespace DeadWrongGames.ZTools.Editor
                 "Common/Enums", 
                 "Common/Interfaces", 
                 "Managers", 
-                "Services/Assets/EventChannelSO", 
-                "Services/Assets/SoundDataSO", 
-                "Services/Audio", 
-                "Services/Audio", 
-                "Services/Input", 
-                "Services/DataPersistence", 
-                "Services/Time", 
-                "Services/GlobalVariable", 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_NAME, Constants.SERVICES_ASSETS_EVENT_CHANNEL_SO_NAME),
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_NAME, Constants.SERVICES_ASSETS_SOUND_DATA_SO_NAME),
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "Input"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "DataPersistence"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "Time"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "GlobalVariable"), 
                 "Systems", 
                 "UI/Configs", 
                 "UI/Prefabs", 

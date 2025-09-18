@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "displayName": "ZTools",
     "description": "Editor tools with functionality like automatically setting up good folder structure and packages for new projects.\n\nUse via Unity Editor top bar -> ZTools.",
-    "unity": "2022.3",
+    "unity": "6.0",
     "author": {
         "name": "DeadWrong Games",
         "url": "hhtps://x.com/DeadWrong_Games"

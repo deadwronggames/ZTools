@@ -92,7 +92,7 @@ namespace DeadWrongGames.ZTools.Editor
             AssetDatabase.Refresh();
 
             // Automatically copy the PF_PersistentGO to the project 
-            AssetDatabase.CopyAsset(Constants.PERSISTENT_GO_PATH, Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
+            AssetDatabase.CopyAsset(Constants.PERSISTENT_GO_FULL_PATH, Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
         }
         
         static class Assets

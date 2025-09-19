@@ -14,8 +14,6 @@ namespace DeadWrongGames.ZTools.Editor
 {
     public static class NewProjectInitializer
     {
-        static readonly string SERVICE_RESOURCE_PATH = Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_FOLDER_NAME, "Resources");
-        
         [MenuItem("ZTools/New project initialization/1. Install essential packages")]
         public static void InstallPackages()
         {
@@ -61,8 +59,8 @@ namespace DeadWrongGames.ZTools.Editor
                 "Common/Enums", 
                 "Common/Interfaces", 
                 "Managers", 
-                Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
-                Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
+                Path.Combine(Constants.SERVICE_RESOURCE_PATH, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
+                Path.Combine(Constants.SERVICE_RESOURCE_PATH, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "EventChannel"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Input"), 
@@ -92,9 +90,7 @@ namespace DeadWrongGames.ZTools.Editor
             AssetDatabase.Refresh();
 
             // Automatically copy the PF_PersistentGO to the project 
-            Debug.Log(Constants.PERSISTENT_GO_FULL_PATH);
-            Debug.Log(Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
-            AssetDatabase.CopyAsset(Constants.PERSISTENT_GO_FULL_PATH, Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
+            AssetDatabase.CopyAsset(Constants.PACKAGE_PERSISTENT_GO_FULL_PATH, Path.Combine(Constants.SERVICE_RESOURCE_FULL_PATH, Constants.PERSISTENT_GO_FILE_NAME_WITH_EXTENSION));
         }
         
         static class Assets

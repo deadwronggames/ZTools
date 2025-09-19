@@ -88,9 +88,6 @@ namespace DeadWrongGames.ZTools.Editor
             AssetDatabase.MoveAsset("Assets/InputSystem_Actions.inputactions", "Assets/_Project/_DefaultStuffTodoRemove/InputSystem_Actions.inputactions");
             AssetDatabase.DeleteAsset("Assets/Readme.asset");
             AssetDatabase.Refresh();
-
-            // Automatically copy the PF_PersistentGO to the project 
-            AssetDatabase.CopyAsset(Constants.PACKAGE_PERSISTENT_GO_FULL_PATH, Path.Combine(Constants.SERVICE_RESOURCE_FULL_PATH, Constants.PERSISTENT_GO_FILE_NAME_WITH_EXTENSION));
         }
         
         static class Assets

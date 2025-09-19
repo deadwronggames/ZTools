@@ -81,17 +81,19 @@ namespace DeadWrongGames.ZTools.Editor
             Folders.Create(rootPath: "", "SandboxDevelopment");    
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
-
+            
             Folders.Move(name: "_Scenes", newParent: "_Project");
             Folders.Move(name: "Settings", newParent: "_Project");
             Folders.Delete(folderName: "TutorialInfo");
             AssetDatabase.Refresh();
-
+            
             AssetDatabase.MoveAsset("Assets/InputSystem_Actions.inputactions", "Assets/_Project/_DefaultStuffTodoRemove/InputSystem_Actions.inputactions");
             AssetDatabase.DeleteAsset("Assets/Readme.asset");
             AssetDatabase.Refresh();
 
             // Automatically copy the PF_PersistentGO to the project 
+            Debug.Log(Constants.PERSISTENT_GO_FULL_PATH);
+            Debug.Log(Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
             AssetDatabase.CopyAsset(Constants.PERSISTENT_GO_FULL_PATH, Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
         }
         

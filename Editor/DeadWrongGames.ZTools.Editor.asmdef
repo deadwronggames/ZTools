@@ -2,7 +2,7 @@
     "name": "DeadWrongGames.ZTools.Editor",
     "rootNamespace": "DeadWrongGames.ZTools.Editor",
     "references": [
-        "GUID:f5142027c8172d945a0a4cc91b7f4cde"
+        "GUID:13f02a76af7f6ac4ab44e515013b0522"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using DeadWrongGames.ZConstants;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
@@ -13,9 +14,39 @@ namespace DeadWrongGames.ZTools.Editor
 {
     public static class NewProjectInitializer
     {
-        [MenuItem("ZTools/New project initialization/Create default folder structure")]
-        public static void CreateFolders()
+        static readonly string SERVICE_RESOURCE_PATH = Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_FOLDER_NAME, "Resources");
+        
+        [MenuItem("ZTools/New project initialization/1. Install essential packages")]
+        public static void InstallPackages()
         {
+            Packages.InstallPackages(new[]
+            {
+                // unity packages
+                "com.unity.addressables",
+                "com.unity.cinemachine",
+                
+                // ZPackages
+                "git+https://github.com/deadwronggames/ZConstants.git",
+                "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
+                "git+https://github.com/deadwronggames/ZCommon.git",
+                "git+https://github.com/deadwronggames/ZServices.git",
+                "git+https://github.com/deadwronggames/ZModularUI.git",
+            });
+        }
+        
+        [MenuItem("ZTools/New project initialization/2. Import essential assets")]
+        public static void ImportEssentials()
+        {
+            Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
+            Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
+            Assets.ImportAsset("DOTween HOTween v2.unitypackage", "Demigiant\\Editor ExtensionsAnimation");
+            // Add more as needed
+        }
+        
+        [MenuItem("ZTools/New project initialization/3. Create default project structure")]
+        public static void CreateProjectStructure()
+        {
+            
             // Specific constant names nice to more easily have addressable assets at expected places 
             Folders.Create(rootPath: Constants.PROJECT_FOLDER_NAME, 
                 "_Art/Audio", 
@@ -30,10 +61,10 @@ namespace DeadWrongGames.ZTools.Editor
                 "Common/Enums", 
                 "Common/Interfaces", 
                 "Managers", 
-                Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_FOLDER_NAME, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
-                Path.Combine(Constants.SERVICES_FOLDER_NAME, Constants.SERVICES_ASSETS_FOLDER_NAME, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
+                Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
+                Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
-                Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "EventChannels"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Input"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "DataPersistence"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Time"), 
@@ -59,34 +90,11 @@ namespace DeadWrongGames.ZTools.Editor
             AssetDatabase.MoveAsset("Assets/InputSystem_Actions.inputactions", "Assets/_Project/_DefaultStuffTodoRemove/InputSystem_Actions.inputactions");
             AssetDatabase.DeleteAsset("Assets/Readme.asset");
             AssetDatabase.Refresh();
-        }
-        
-        [MenuItem("ZTools/New project initialization/Import essential assets")]
-        public static void ImportEssentials()
-        {
-            Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
-            Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
-            Assets.ImportAsset("DOTween HOTween v2.unitypackage", "Demigiant\\Editor ExtensionsAnimation");
-            // Add more as needed
-        }
-        
-        [MenuItem("ZTools/New project initialization/Install essential packages")]
-        public static void InstallPackages()
-        {
-            Packages.InstallPackages(new[]
-            {
-                // unity packages
-                "com.unity.addressables",
-                "com.unity.cinemachine",
-                
-                // ZPackages
-                "git+https://github.com/deadwronggames/ZCommon.git",
-                "git+https://github.com/deadwronggames/ZModularUI.git",
-                "git+https://github.com/deadwronggames/ZServices.git",
-                "git+https://github.com/deadwronggames/ZUtils.git", // also installs "com.unity.nuget.newtonsoft-json" as dependency
-            });
-        }
 
+            // Automatically copy the PF_PersistentGO to the project 
+            AssetDatabase.CopyAsset(Constants.PERSISTENT_GO_PATH, Path.Combine(Constants.ROOT_FOLDER_NAME, Constants.PROJECT_FOLDER_NAME, SERVICE_RESOURCE_PATH));
+        }
+        
         static class Assets
         {
             public static void ImportAsset(string asset, string folder)

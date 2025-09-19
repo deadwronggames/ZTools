@@ -64,7 +64,7 @@ namespace DeadWrongGames.ZTools.Editor
                 Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
                 Path.Combine(SERVICE_RESOURCE_PATH, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Audio"), 
-                Path.Combine(Constants.SERVICES_FOLDER_NAME, "EventChannels"), 
+                Path.Combine(Constants.SERVICES_FOLDER_NAME, "EventChannel"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Input"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "DataPersistence"), 
                 Path.Combine(Constants.SERVICES_FOLDER_NAME, "Time"), 

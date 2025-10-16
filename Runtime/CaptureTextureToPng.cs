@@ -23,7 +23,6 @@ namespace DeadWrongGames.ZTools
         /// Use orthogonal camera at Plane with material so that top and bottom just captures it.
         /// Attach this script to Camera.
         /// Play and press 'P'
-        /// Can use scene in assets folder.
         /// </summary>
         private void Capture()
         {

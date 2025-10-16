@@ -12,11 +12,16 @@ using UnityEngine;
 
 namespace DeadWrongGames.ZTools.Editor
 {
+    /// <summary>
+    /// Provides editor menu utilities to initialize a new Unity project
+    /// with default structure, essential packages, and assets.
+    /// </summary>
     public static class NewProjectInitializer
     {
         [MenuItem("ZTools/New project initialization/1. Install essential packages")]
         public static void InstallPackages()
         {
+            // Installs Unity packages and ZPackages with dependencies
             Packages.InstallPackages(new[]
             {
                 // unity packages
@@ -35,6 +40,7 @@ namespace DeadWrongGames.ZTools.Editor
         [MenuItem("ZTools/New project initialization/2. Import essential assets")]
         public static void ImportEssentials()
         {
+            // Imports commonly used Unity packages from Asset Store paths
             Assets.ImportAsset("OdinInspectorValidatorSerializer_Education_v3.3.1.13.unitypackage", "Sirenix/Education");
             Assets.ImportAsset("Audio Preview Tool.unitypackage", "Warped Imagination/Editor ExtensionsAudio");
             Assets.ImportAsset("DOTween HOTween v2.unitypackage", "Demigiant\\Editor ExtensionsAnimation");
@@ -44,8 +50,9 @@ namespace DeadWrongGames.ZTools.Editor
         [MenuItem("ZTools/New project initialization/3. Create default project structure")]
         public static void CreateProjectStructure()
         {
-            
             // Specific constant names nice to more easily have addressable assets at expected places 
+            
+            // Creates common project folders
             Folders.Create(rootPath: Constants.PROJECT_FOLDER_NAME, 
                 "_Art/Audio", 
                 "_Art/Fonts", 
@@ -72,6 +79,8 @@ namespace DeadWrongGames.ZTools.Editor
                 "UI/Prefabs", 
                 "Utils"
             );
+            
+            // Additional project structure folders
             Folders.Create(rootPath: "", "Editor");      
             Folders.Create(rootPath: "", "External");      
             Folders.Create(rootPath: "", "QuickTest");    
@@ -80,6 +89,7 @@ namespace DeadWrongGames.ZTools.Editor
             Folders.Rename(oldName: "Scenes", newName: "_Scenes");
             AssetDatabase.Refresh();
             
+            // Rename, move, delete default folders to match desired structure
             Folders.Move(name: "_Scenes", newParent: "_Project");
             Folders.Move(name: "Settings", newParent: "_Project");
             Folders.Delete(folderName: "TutorialInfo");
@@ -90,6 +100,7 @@ namespace DeadWrongGames.ZTools.Editor
             AssetDatabase.Refresh();
         }
         
+        // Helpers for importing asset packages
         static class Assets
         {
             public static void ImportAsset(string asset, string folder)
@@ -115,6 +126,7 @@ namespace DeadWrongGames.ZTools.Editor
             }
         }
         
+        // Helpers for installing Unity packages
         static class Packages
         {
             static AddRequest s_request;
@@ -147,6 +159,7 @@ namespace DeadWrongGames.ZTools.Editor
             }
         }
 
+        // Helpers for creating, moving, renaming, deleting project folders
         static class Folders
         {
             public static void Create(string rootPath, params string[] folders)

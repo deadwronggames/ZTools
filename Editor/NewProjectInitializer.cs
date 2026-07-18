@@ -21,7 +21,7 @@ namespace DeadWrongGames.ZTools.Editor
         [MenuItem("ZTools/New project initialization/1. Install essential packages")]
         public static void InstallPackages()
         {
-            // Installs Unity packages and ZPackages with dependencies
+            // Installs Unity packages and ZPackages and their dependencies
             Packages.InstallPackages(new[]
             {
                 // unity packages
@@ -34,6 +34,9 @@ namespace DeadWrongGames.ZTools.Editor
                 "git+https://github.com/deadwronggames/ZCommon.git",
                 "git+https://github.com/deadwronggames/ZServices.git",
                 "git+https://github.com/deadwronggames/ZModularUI.git",
+                
+                // external packages
+                "git+https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity" // For going Top Menu -> NuGet -> Manage NuGet Packages -> CsvHelper
             });
         }
         
@@ -65,6 +68,7 @@ namespace DeadWrongGames.ZTools.Editor
                 "Common/ClassesAndStructs", 
                 "Common/Enums", 
                 "Common/Interfaces", 
+                "Core", 
                 "Managers", 
                 Path.Combine(Constants.SERVICE_RESOURCE_PATH, Constants.SERVICES_EVENT_CHANNEL_SO_FOLDER_NAME),
                 Path.Combine(Constants.SERVICE_RESOURCE_PATH, Constants.SERVICES_SOUND_DATA_SO_FOLDER_NAME),
